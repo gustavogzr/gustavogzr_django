@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Tarefas Pendentes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome da Tarefa</th>
+                <th>Data de Criação</th>
+                <th>Data de Conclusão Prevista</th>
+                <th>Responsável</th>
+                <th>Sobrenome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarefa in tarefas %}
+            <tr>
+                <td>{{ tarefa.titulo }}</td>
+                <td>{{ tarefa.data_criacao|date:"d/m/Y" }}</td>
+                <td>{{ tarefa.data_conclusao_prevista|date:"d/m/Y" }}</td>
+                <td>{{ tarefa.responsavel }}</td>
+                <td>{{ tarefa.responsavel.apelido }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+    
+</body>
+</html>
